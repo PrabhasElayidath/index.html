@@ -1,0 +1,89 @@
+:root {
+    --olive: #a6a57a; /* Exact color from your video */
+    --text: #333333;
+    --header-gray: #d1d1d1; /* Lighter shade for H2s to emphasize photos */
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth;
+}
+
+section,
+header,
+footer {
+    scroll-margin-top: 110px;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 50px; }
+
+/* Navbar Styling */
+.navbar {position: fixed;  top: 0;  left: 0;  width: 100%;  background: #fff;  z-index: 1000;  box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.nav-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.logo { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; text-decoration: none; color: #000; letter-spacing: -1px; }
+.nav-links a { text-decoration: none; color: var(--text); margin-left: 35px; font-size: 0.95rem; font-weight: 400; }
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), 
+                url('https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/tapia117pj/tapia-image-YDz3D33EMbfrBaM0.jpg');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; color: white;
+}
+.hero-label { font-size: 1.1rem; margin-bottom: 25px; font-weight: 300; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 7vw, 6.5rem); line-height: 1; font-weight: 400; }
+
+/* Zebra Grid Layout */
+.split-section { padding: 120px 0; }
+.bg-alt { background-color: #fafafa; }
+.grid-box { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+
+/* Reverse logic for alternating image/text positions */
+.reverse .media { order: 2; }
+.reverse .text-content { order: 1; }
+
+.media img { width: 100%; height: 600px; object-fit: cover; display: block; }
+
+.text-content h2 { 
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 4.8rem; 
+    color: var(--header-gray); 
+    margin-bottom: 30px; 
+    font-weight: 300; 
+}
+.text-content p { font-size: 1.2rem; margin-bottom: 45px; max-width: 450px; color: #555; }
+
+/* CTA Button */
+.btn-olive {
+    display: inline-block;
+    background-color: var(--olive);
+    color: white;
+    padding: 18px 48px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+.btn-olive:hover { background-color: #91906a; }
+
+/* Footer */
+.footer { background-color: var(--olive); padding: 75px 0; text-align: center; }
+.socials a { color: white; font-size: 1.8rem; margin: 0 20px; }
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .grid-box, .grid-box.reverse { grid-template-columns: 1fr; gap: 40px; }
+    .reverse .media { order: 1; }
+    .reverse .content { order: 2; }
+    .text-content h2 { font-size: 3.2rem; }
+    .media img { height: 400px; }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapia - Family Photographer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="logo">Tapia</a>
+            <div class="nav-links">
+                <a href="#pregnancy">Pregnancy</a>
+                <a href="#babies">Babies</a>
+                <a href="#family">Family</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container hero-content">
+            <p class="hero-label">Tapia Anderson</p>
+            <h1>Family events photographer<br>based in Chicago</h1>
+        </div>
+    </header>
+
+    <section id="pregnancy" class="split-section">
+        <div class="container grid-box">
+            <div class="media">
+                <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=656,h=656,fit=crop/tapia117pj/tapia-image-meN9GWLa0bukBReN.jpg" alt="Pregnancy">
+            </div>
+            <div class="text-content">
+                <h2>Pregnancy</h2>
+                <p>Do you want to document the process of bringing your little one into the world? Come and have some shots taken that capture the miracle of pregnancy.</p>
+                <a href="#babies" class="btn-olive">View more</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="babies" class="split-section bg-alt">
+        <div class="container grid-box reverse">
+            <div class="media">
+                <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=656,h=656,fit=crop/tapia117pj/tapia-image-Ygx05E9xDRu9446G.jpg" alt="Babies">
+            </div>
+            <div class="text-content">
+                <h2>Babies</h2>
+                <p>No photography subject is more photogenic to photograph than a smiling baby. We have the props and knowhow to get the best photos of your bundle of joy.</p>
+                <a href="#family" class="btn-olive">View more</a>
+            </div>
+        </div>
+    </section>
+     <section id="family" class="split-section">
+        <div class="container grid-box">
+            <div class="media">
+                <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=656,h=656,fit=crop/tapia117pj/tapia-image-AGNxv04ewGHBj3py.jpg" alt="Family">
+            </div>
+            <div class="text-content">
+                <h2>Family</h2>
+                <p>Family portraits are a great way to preserve memories of your loved ones. We specialize in capturing the joy and connection that makes each family unique.</p>
+                <a href="#about" class="btn-olive">View more</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="split-section">
+        <div class="container grid-box">
+            <div class="text-content">
+                <h2>About me</h2>
+                <p>I'm Tapia Anderson, a photographer with 2 decades' experience in portraiture and family photography. I'm happy to adjust my style to your tastes.</p>
+                <a href="#contact" class="btn-olive">Get in touch</a>
+            </div>
+            <div class="media">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200" alt="About Me">
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="socials">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', function (event) {
+            const link = event.target.closest('a[href^="#"]');
+            if (!link) return;
+
+            const targetId = link.getAttribute('href');
+            if (!targetId || targetId === '#') return;
+
+            const target = document.querySelector(targetId);
+            if (!target) return;
+
+            event.preventDefault();
+            const navbar = document.querySelector('.navbar');
+            const navHeight = navbar ? navbar.offsetHeight : 0;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+            window.scrollTo({ top, behavior: 'smooth' });
+            window.location.hash = targetId;
+        });
+    </script>
+</body>
+</html>
